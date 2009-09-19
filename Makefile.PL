@@ -2,9 +2,9 @@ use inc::Module::Install;
 name 'CGI-Param-Filter';
 all_from 'lib/CGI/Param/Filter.pm';
 
-# requires '';
+requires 'UNIVERSAL::require';
 
-tests 't/*.t';
+tests 't/*.t t/*/*.t t/*/*/*.t t/*/*/*/*.t t/*/*/*/*/*.t';
 author_tests 'xt';
 
 build_requires 'Test::More';
