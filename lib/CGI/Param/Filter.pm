@@ -20,7 +20,7 @@ sub new {
 		
 		Carp::croak "Usage: filter => [ xxx => {} ]" unless ref $arg eq 'HASH';
 		
-		$module->require;
+		$module->require || Carp::croak "Can't locate $module\.pm \@INC (\@INC contains: @INC).";
 		$arg->{query} = $args->{query};
 		$args->{query} = $module->new($arg);
 	}
